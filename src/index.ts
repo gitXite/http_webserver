@@ -1,6 +1,11 @@
 import express from "express";
+import path from "path";
 
 const app = express();
-app.listen(8080, () => {
-    console.log('Server is running on port: 8080');
+const PORT = 8080;
+
+app.use(express.static(".src"));
+
+app.listen(PORT, () => {
+    console.log(`Server is running at http://localhost:${PORT}`);
 });
